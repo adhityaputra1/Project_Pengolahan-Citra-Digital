@@ -1,0 +1,57 @@
+/* style.css - Custom styling for Streamlit app */
+
+/* Background and font */
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    color: #222 !important;
+}
+
+/* Title */
+h1, .stTitle {
+    color: #1a202c !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Button */
+[data-testid="baseButton-secondary"] {
+    background: #4f8cff !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 0.5em 1.5em !important;
+    font-size: 1.1em !important;
+    transition: background 0.2s !important;
+}
+[data-testid="baseButton-secondary"]:hover {
+    background: #2563eb !important;
+}
+
+/* File uploader, image, markdown */
+[data-testid="stFileUploader"], [data-testid="stImage"], [data-testid="stMarkdownContainer"] {
+    border-radius: 12px !important;
+    background: #fff !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+    padding: 1em !important;
+    margin-bottom: 1.5em !important;
+}
+
+/* Image border */
+[data-testid="stImage"] img {
+    border-radius: 10px !important;
+    border: 2px solid #e2e8f0 !important;
+}
+
+/* Caption styling */
+.css-1v0mbdj, .css-10trblm {
+    color: #64748b !important;
+    font-size: 1em !important;
+    text-align: center !important;
+}
+
+.stMarkdown, [data-testid="stMarkdownContainer"] {
+    color: #222 !important;
+    font-size: 1.1em;
+}
