@@ -22,21 +22,21 @@ if menu == "Upload Gambar":
         img_path = "temp_image.jpg"
         with open(img_path, "wb") as f:
             f.write(uploaded_file.read())
-        st.image(Image.open(img_path), caption="📸 Gambar yang diupload", use_column_width=True)
+        st.image(Image.open(img_path), caption="📸 Gambar yang diupload", use_container_width=True)
         st.write("🔍 Mendeteksi...")
         results = model.predict(source=img_path, save=False, conf=0.3, verbose=False)
         annotated = results[0].plot()
         annotated_rgb = annotated[..., ::-1]
-        st.image(annotated_rgb, caption="📦 Hasil Deteksi", use_column_width=True)
+        st.image(annotated_rgb, caption="📦 Hasil Deteksi", use_container_width=True)
 
 elif menu == "Kamera HP":
     img_data = st.camera_input("Ambil foto objek")
     if img_data is not None:
         image = Image.open(img_data)
-        st.image(image, caption="📸 Gambar dari Kamera", use_column_width=True)
+        st.image(image, caption="📸 Gambar dari Kamera", use_container_width=True)
         st.write("🔍 Mendeteksi...")
         image.save("temp_image.jpg")
         results = model.predict(source="temp_image.jpg", save=False, conf=0.3, verbose=False)
         annotated = results[0].plot()
         annotated_rgb = annotated[..., ::-1]
-        st.image(annotated_rgb, caption="📦 Hasil Deteksi", use_column_width=True)
+        st.image(annotated_rgb, caption="📦 Hasil Deteksi", use_container_width=True)
